@@ -4,6 +4,7 @@
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
+    //@代表path文件夹
     "paths": {
       "@/*": [
         "src/*"
@@ -15,5 +16,9 @@
       "dom.iterable",
       "scripthost"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
 }
