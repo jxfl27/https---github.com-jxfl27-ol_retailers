@@ -18,11 +18,22 @@ export default new VueRouter({
             meta: { show: true }
         },
         {
-            //占位
-            path: "/Search/:keyword",
+            //为params占位
+            path: "/Search/:keyword?",
             component: Search,
             meta: { show: true },
-            name: "Search"
+            name: "Search",
+            //props: true,'
+            // props: {
+            //     a: 1,
+            //     b: 2
+            // }
+            props: ($route) => {
+                return {
+                    keyword: $route.params.keyword,
+                    k: $route.query.k,
+                }
+            }
         },
         {
             path: "/Login",
