@@ -56,9 +56,10 @@ export default {
     },
     methods: {
         goSearch() {
+            console.log(this)
             //this.$router.replace('/Search/' + this.keyword + "?k=" + this.keyword.toUpperCase())
-            //this.$router.push(`/search/${this.keyword}?k=${this.keyword.toUpperCase()}`)
-            this.$router.push({ name: "Search", params: { keyword: this.keyword || undefined }, query: { k: this.keyword.toUpperCase() } })
+            this.$router.push(`/search/${this.keyword}?k=${this.keyword.toUpperCase()}`)
+            //this.$router.push({ name: "Search", params: { keyword: this.keyword || undefined }, query: { k: this.keyword.toUpperCase() } })
         }
     }
 };

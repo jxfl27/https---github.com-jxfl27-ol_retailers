@@ -8,6 +8,29 @@ import Home from '@/pages/Home'
 import Search from '@/pages/Search'
 import Login from '@/pages/Login'
 import Register from '@/pages/Register'
+//此时这个函数的作用域链是在全局，this指向全局windows
+let originPush = VueRouter.prototype.push;
+let originReplace = VueRouter.prototype.replace;
+//重写push方法
+VueRouter.prototype.push = function (location, resolve, reject) {
+    if (resolve && reject) {
+        //要把this应用到VueRouter上
+        originPush.call(this, location, resolve, reject)
+    }
+    else {
+        originPush.call(this, location, () => { }, () => { })
+    }
+}
+
+VueRouter.prototype.replace = function (location, resolve, reject) {
+    if (resolve && reject) {
+        originReplace.call(this, location, resolve, reject)
+    }
+    else {
+        originReplace.call(this, location, () => { }, () => { })
+    }
+}
+
 //广播路由
 export default new VueRouter({
     //配置路由组件
