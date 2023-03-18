@@ -10,23 +10,29 @@ import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 //广播路由
 export default new VueRouter({
-    //配置路由
+    //配置路由组件
     routes: [
         {
             path: "/Home",
-            component: Home
+            component: Home,
+            meta: { show: true }
         },
         {
-            path: "/Search",
-            component: Search
+            //占位
+            path: "/Search/:keyword",
+            component: Search,
+            meta: { show: true },
+            name: "Search"
         },
         {
             path: "/Login",
-            component: Login
+            component: Login,
+            meta: { show: false }
         },
         {
             path: "/Register",
-            component: Register
+            component: Register,
+            meta: { show: false }
         },
         {
             path: '*',
