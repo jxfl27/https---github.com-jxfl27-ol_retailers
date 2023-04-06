@@ -33,9 +33,11 @@ export default {
 
 <style scoped lang="less">
 .today-recommend {
+
     .py-container {
         width: 1200px;
         margin: 0 auto;
+        margin-top: 50px;
 
         .recommend {
             height: 165px;

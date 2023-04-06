@@ -1,6 +1,5 @@
 <template>
     <div>
-        <!-- 三级联动组件 -->
         <TypeNav></TypeNav>
         <listContainer></listContainer>
         <Recommend></Recommend>
@@ -19,6 +18,7 @@ import Rank from '@/pages/Home/Rank'
 import Like from '@/pages/Home/Like'
 import Floor from '@/pages/Home/Floor'
 import Brand from '@/pages/Home/Brand'
+
 export default {
     name: '',
     components: {
@@ -28,7 +28,7 @@ export default {
         Like,
         Floor,
         Brand,
-    }
+    },
 }
 </script>
 
